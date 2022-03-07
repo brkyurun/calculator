@@ -7,7 +7,9 @@ const operands = [...document.querySelectorAll(".operator")];
 let numArr = [];
 
 for (let number of numbers) {
-  number.addEventListener("click", getNumber);
+  number.addEventListener("click", () => {
+    calcDisplay.textContent = `${getNumber(number)}`;
+  });
 }
 
 for (let operand of operands) {
@@ -19,7 +21,7 @@ function storeNumbers(num) {
 }
 
 function getNumber(element) {
-  console.log(element.textContent);
+  return element.target.textContent;
 }
 
 function operate(operator, num1, num2) {
