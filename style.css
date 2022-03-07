@@ -17,6 +17,8 @@ button {
   width: 75px;
   height: 75px;
   font-size: 2rem;
+  border-radius: 5px;
+  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.3);
 }
 
 button.btn-clear {
@@ -27,6 +29,9 @@ button.btn-clear {
   background-color: honeydew;
   height: 600px;
   width: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +46,8 @@ button.btn-clear {
   border: 1px solid slateblue;
   background-color: rgba(106, 90, 205, 0.3);
   font-size: 4rem;
+  box-shadow: inset -3px -7px 15px rgba(0, 0, 0, 0.3),
+    inset 3px 7px 15px rgba(0, 0, 0, 0.3);
 }
 
 .calc-buttons {

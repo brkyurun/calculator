@@ -3,12 +3,23 @@
 //use in the next step.
 const calcDisplay = document.querySelector(".calc-text");
 const numbers = [...document.querySelectorAll(".calc-number")];
+const operands = [...document.querySelectorAll(".operator")];
+let numArr = [];
 
 for (let number of numbers) {
-  number.addEventListener(
-    "click",
-    (number) => console.log(number.target.textContent) //don't forget to change to return
-  );
+  number.addEventListener("click", getNumber);
+}
+
+for (let operand of operands) {
+  operand.addEventListener("click", storeNumbers);
+}
+
+function storeNumbers(num) {
+  numArr.push(+num.textContent);
+}
+
+function getNumber(element) {
+  console.log(element.textContent);
 }
 
 function operate(operator, num1, num2) {
