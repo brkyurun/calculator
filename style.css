@@ -38,6 +38,11 @@ button.btn-clear {
   justify-content: space-evenly;
 }
 
+.display-value {
+  font-size: 1rem;
+  position: absolute;
+}
+
 .calc-display {
   text-align: end;
   width: 450px;
@@ -48,6 +53,10 @@ button.btn-clear {
   font-size: 4rem;
   box-shadow: inset -3px -7px 15px rgba(0, 0, 0, 0.3),
     inset 3px 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+.calc-text {
+  margin-top: 12px;
 }
 
 .calc-buttons {
