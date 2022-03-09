@@ -4,11 +4,13 @@ const numberButtons = [...document.querySelectorAll(".calc-number")];
 const operatorButtons = [...document.querySelectorAll(".operator")];
 const equalsButton = document.querySelector(".equals-operator");
 const clearButton = document.querySelector(".btn-clear");
+const decimalButton = document.querySelector(".btn-insert-dot");
 
 let firstNumber = "";
 let secondNumber = "";
 let operatorChoice = "";
 let changeState = false;
+let decimalStatus = false;
 
 for (let button of numberButtons) {
   button.addEventListener("click", () => appendNumber(button.textContent));
@@ -28,6 +30,15 @@ equalsButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", clear);
 
+decimalButton.addEventListener("click", insertDecimal);
+
+function insertDecimal() {
+  if (decimalStatus === false) {
+    currentOperationDisplay.textContent += ".";
+    decimalStatus = true;
+  } else if (decimalStatus === true) return;
+}
+
 function updateDisplay() {
   currentOperationDisplay.textContent = "";
   changeState = false;
@@ -39,6 +50,9 @@ function setOperator(operator) {
   operatorChoice = operator;
   historyOperationDisplay.textContent = `${firstNumber} ${operator}`;
   changeState = true;
+  if (decimalStatus === true) {
+    decimalStatus = false;
+  }
 }
 
 function calculateResult() {
@@ -61,12 +75,13 @@ function clear() {
   secondNumber = "";
   operatorChoice = "";
   changeState = false;
+  decimalStatus = false;
   historyOperationDisplay.textContent = "";
   currentOperationDisplay.textContent = "";
 }
 
 function round(number) {
-  return Math.floor((number * 100) / 100);
+  return Math.round(number * 1000) / 1000;
 }
 
 function appendNumber(number) {
