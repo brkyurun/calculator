@@ -102,3 +102,25 @@ button.btn-insert.dot {
   flex-direction: column;
   gap: 5px;
 }
+
+footer {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+
+.my-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.my-info a,
+.my-info a:visited {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: monospace;
+  font-size: 20px;
+  cursor: pointer;
+}
