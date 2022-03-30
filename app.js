@@ -36,7 +36,12 @@ function insertDecimal() {
   if (decimalStatus === false) {
     currentOperationDisplay.textContent += ".";
     decimalStatus = true;
-  } else if (decimalStatus === true) return;
+  } else if (
+    currentOperationDisplay.textContent.includes(".") ||
+    decimalStatus === true
+  ) {
+    return;
+  }
 }
 
 function updateDisplay() {
@@ -56,6 +61,7 @@ function setOperator(operator) {
 }
 
 function calculateResult() {
+  if (changeState) return;
   if (operatorChoice === "÷" && currentOperationDisplay.textContent == 0) {
     alert("No divide by 0 *bonk*!");
     clear();
